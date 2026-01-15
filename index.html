@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content=" MARCO POLO - Paysagiste. Taille, élagage et entretien de jardins d'exception.">
+    <title>La Cabane au fond du jardin | MARCO POLO</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Inter:wght@200;300;400&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <nav id="navbar">
+        <div class="logo">LA CABANE AU FOND DU JARDIN</div>
+        <div class="nav-links">
+            <a href="#services">Savoir-faire</a>
+            <a href="#avis">Avis-Clients</a>
+            <a href="#contact" class="btn-nav">Contact</a>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="overlay"></div>
+        <div class="hero-content">
+            <span class="sur-titre">Paysagiste & Jardinier</span>
+            <h1>Marco Polo</h1>
+            <p>L'art de sublimer la nature, tout simplement.</p>
+            <a href="#contact" class="btn-gold">Demander un devis gratuit</a>
+        </div>
+    </header>
+
+    <section id="services" class="section">
+        <div class="container">
+            <h2 class="section-title">Prestations <span class="accent">Sur-mesure</span></h2>
+            <div class="grid-services">
+                <div class="card">
+                    <div class="icon">✂️</div>
+                    <h3>Taille & Structure</h3>
+                    <p>Taille raisonnée de haies, arbustes et topiaires pour structurer vos espaces tout en respectant le végétal.</p>
+                </div>
+                <div class="card">
+                    <div class="icon">🌿</div>
+                    <h3>Entretien Soigné</h3>
+                    <p>Tonte de précision, débroussaillage et désherbage manuel. Votre jardin reste impeccable en toute saison.</p>
+                </div>
+                <div class="card">
+                    <div class="icon">🌳</div>
+                    <h3>Élagage & Soins</h3>
+                    <p>Petit élagage sécurisé et diagnostic santé de vos arbres pour garantir leur longévité.</p>
+                </div>
+                <div class="card">
+                    <div class="icon">🌸</div>
+                    <h3>Plantation</h3>
+                    <p>Conseils en végétaux et plantation de massifs pour apporter couleur et vie à votre extérieur.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="avis" class="section bg-sand">
+        <div class="container">
+            <h2 class="section-title">L'avis des clients</h2>
+            <div class="reviews-container">
+                <div class="review-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="review-text">"Frédéric a un véritable œil d'expert. Ma haie n'a jamais été aussi bien taillée. Ponctuel et discret."</p>
+                    <p class="author">— Sophie M., Propriétaire</p>
+                </div>
+                <div class="review-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="review-text">"Intervention rapide pour un débroussaillage complexe. Le résultat est bluffant, on a retrouvé notre jardin."</p>
+                    <p class="author">— Marc & Julie L.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+        <div class="container contact-wrapper">
+            <div class="contact-info">
+                <h2>Parlons de votre jardin</h2>
+                <p>Que ce soit pour un entretien ponctuel ou un contrat annuel, je suis à votre écoute.</p>
+                <ul class="info-list">
+                    <li>📍 41, 45, 18</li>
+                    <li>📞 07 75 78 56 03</li>
+                    <li>📧 contact@lacabane.fr</li>
+                </ul>
+            </div>
+            
+            <form id="contact-form" class="form-box">
+                <div class="form-group">
+                    <label for="name">Nom complet</label>
+                    <input type="text" id="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="type">Type de besoin</label>
+                    <select id="type">
+                        <option>Taille de haies</option>
+                        <option>Tonte & Entretien</option>
+                        <option>Élagage</option>
+                        <option>Création / Plantation</option>
+                        <option>Autre</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="message">Détails</label>
+                    <textarea id="message" rows="4" required></textarea>
+                </div>
+                <button type="submit" class="btn-submit">Envoyer ma demande</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 La Cabane au fond du jardin — Frédéric Sellier. Tous droits réservés.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

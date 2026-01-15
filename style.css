@@ -1,0 +1,257 @@
+:root {
+    --dark-green: #141b15;
+    --gold: #cfaa7d;       /* Couleur Or mat/Sable */
+    --light-grey: #f4f4f4;
+    --white: #ffffff;
+    --text-main: #333333;
+    --font-title: 'Cormorant Garamond', serif;
+    --font-text: 'Inter', sans-serif;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+    font-family: var(--font-text);
+    color: var(--text-main);
+    background-color: var(--white);
+    line-height: 1.7;
+    overflow-x: hidden; /* Évite le scroll horizontal sur mobile */
+}
+
+/* --- Navigation --- */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    position: fixed; /* Fixe en haut */
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    transition: background 0.4s ease, padding 0.4s ease;
+}
+
+nav.scrolled {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 15px 5%;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.05);
+}
+
+.logo {
+    font-family: var(--font-title);
+    font-weight: 600;
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--white); /* Blanc par défaut sur l'image */
+    transition: color 0.4s;
+}
+
+nav.scrolled .logo { color: var(--dark-green); }
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--white);
+    margin-left: 30px;
+    font-size: 0.9rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: color 0.3s;
+}
+
+nav.scrolled .nav-links a { color: var(--dark-green); }
+
+.btn-nav {
+    border: 1px solid var(--white);
+    padding: 8px 20px;
+    border-radius: 2px;
+}
+
+nav.scrolled .btn-nav { border-color: var(--dark-green); }
+
+/* --- Hero Section (Image fond.png) --- */
+.hero {
+    height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-image: url('fond.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Effet Parallaxe */
+}
+
+.overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.6));
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    color: var(--white);
+    padding: 0 20px;
+}
+
+.sur-titre {
+    display: block;
+    font-size: 0.9rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    opacity: 0.9;
+}
+
+.hero h1 {
+    font-family: var(--font-title);
+    font-size: clamp(3rem, 6vw, 5.5rem); /* Taille adaptative */
+    font-weight: 300;
+    line-height: 1.1;
+    margin-bottom: 30px;
+}
+
+.btn-gold {
+    display: inline-block;
+    background-color: var(--gold);
+    color: var(--dark-green);
+    padding: 15px 40px;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    transition: transform 0.3s ease, background 0.3s;
+}
+
+.btn-gold:hover {
+    transform: translateY(-3px);
+    background-color: #e0bb8e;
+}
+
+/* --- Sections Générales --- */
+.section { padding: 100px 5%; }
+.container { max-width: 1200px; margin: 0 auto; }
+.section-title {
+    font-family: var(--font-title);
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 60px;
+    font-weight: 400;
+    color: var(--dark-green);
+}
+
+.accent { font-style: italic; color: var(--gold); }
+
+/* --- Services --- */
+.grid-services {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+}
+
+.card {
+    text-align: center;
+    padding: 30px;
+    transition: transform 0.3s;
+}
+
+.card:hover { transform: translateY(-5px); }
+
+.icon { font-size: 2rem; margin-bottom: 20px; }
+
+.card h3 {
+    font-family: var(--font-title);
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: var(--dark-green);
+}
+
+.card p { font-size: 0.95rem; color: #666; font-weight: 300; }
+
+/* --- Avis --- */
+.bg-sand { background-color: #f9f7f2; }
+
+.reviews-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+}
+
+.review-card {
+    background: var(--white);
+    padding: 40px;
+    max-width: 500px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+    border-top: 3px solid var(--gold);
+}
+
+.stars { color: var(--gold); margin-bottom: 15px; letter-spacing: 3px; }
+.review-text { font-style: italic; margin-bottom: 20px; color: #555; }
+.author { font-weight: 600; font-size: 0.85rem; text-transform: uppercase; }
+
+/* --- Contact Form --- */
+.contact-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+}
+
+.info-list { list-style: none; margin-top: 30px; }
+.info-list li { margin-bottom: 15px; font-size: 1.1rem; }
+
+.form-box {
+    background: var(--light-grey);
+    padding: 40px;
+    border-radius: 4px;
+}
+
+.form-group { margin-bottom: 20px; }
+label { display: block; font-size: 0.8rem; text-transform: uppercase; margin-bottom: 8px; color: #888; }
+input, select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    background: var(--white);
+    font-family: var(--font-text);
+    outline: none;
+}
+input:focus, textarea:focus { border-color: var(--dark-green); }
+
+.btn-submit {
+    width: 100%;
+    background: var(--dark-green);
+    color: var(--white);
+    padding: 15px;
+    border: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn-submit:hover { background: #000; }
+
+/* --- Footer --- */
+footer {
+    background: var(--dark-green);
+    color: rgba(255,255,255,0.6);
+    text-align: center;
+    padding: 40px;
+    font-size: 0.8rem;
+}
+
+/* --- Mobile Responsiveness --- */
+@media (max-width: 768px) {
+    .hero h1 { font-size: 3rem; }
+    .nav-links { display: none; } /* On cache le menu sur mobile pour simplifier */
+    .contact-wrapper { grid-template-columns: 1fr; }
+    .section { padding: 60px 5%; }
+}
