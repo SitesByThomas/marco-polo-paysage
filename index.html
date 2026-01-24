@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content=" MARCO POLO - Paysagiste. Taille, élagage et entretien de jardins d'exception.">
+    <meta name="description" content="MARCO POLO - Paysagiste. Taille, élagage et entretien de jardins d'exception.">
+    <meta name="theme-color" content="#141b15">
     <title>La Cabane au fond du jardin | MARCO POLO</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,7 +15,14 @@
 
     <nav id="navbar">
         <div class="logo">LA CABANE AU FOND DU JARDIN</div>
-        <div class="nav-links">
+        
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <div class="nav-links" id="nav-links">
             <a href="#services">Savoir-faire</a>
             <a href="#avis">Avis-Clients</a>
             <a href="#contact" class="btn-nav">Contact</a>
@@ -34,7 +42,7 @@
     <section id="services" class="section">
         <div class="container">
             <h2 class="section-title">Prestations <span class="accent">Sur-mesure</span></h2>
-            <div class="grid-services">
+            <div class="services-wrapper">
                 <div class="card">
                     <div class="icon">✂️</div>
                     <h3>Taille & Structure</h3>
@@ -62,59 +70,113 @@
     <section id="avis" class="section bg-sand">
         <div class="container">
             <h2 class="section-title">L'avis des clients</h2>
-            <div class="reviews-container">
-                <div class="review-card">
-                    <div class="stars">★★★★★</div>
-                    <p class="review-text">"Frédéric a un véritable œil d'expert. Ma haie n'a jamais été aussi bien taillée. Ponctuel et discret."</p>
-                    <p class="author">— Sophie M., Propriétaire</p>
+            
+            <div class="carousel-container">
+                <button class="carousel-btn prev-btn" id="prevBtn">&#10094;</button>
+                
+                <div class="carousel-track-container">
+                    <ul class="carousel-track" id="track">
+                        <li class="carousel-slide current-slide">
+                            <div class="review-card">
+                                <div class="stars">★★★★★</div>
+                                <p class="review-text">"Frédéric a un véritable œil d'expert. Ma haie n'a jamais été aussi bien taillée. Ponctuel et discret."</p>
+                                <p class="author">— Sophie M., Propriétaire</p>
+                            </div>
+                        </li>
+                        <li class="carousel-slide">
+                            <div class="review-card">
+                                <div class="stars">★★★★★</div>
+                                <p class="review-text">"Intervention rapide pour un débroussaillage complexe. Le résultat est bluffant, on a retrouvé notre jardin."</p>
+                                <p class="author">— Marc & Julie L.</p>
+                            </div>
+                        </li>
+                        <li class="carousel-slide">
+                            <div class="review-card">
+                                <div class="stars">★★★★★</div>
+                                <p class="review-text">"Des conseils précieux pour mes massifs. Marco est un vrai passionné qui respecte la biodiversité."</p>
+                                <p class="author">— Thomas D.</p>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
-                <div class="review-card">
-                    <div class="stars">★★★★★</div>
-                    <p class="review-text">"Intervention rapide pour un débroussaillage complexe. Le résultat est bluffant, on a retrouvé notre jardin."</p>
-                    <p class="author">— Marc & Julie L.</p>
-                </div>
+
+                <button class="carousel-btn next-btn" id="nextBtn">&#10095;</button>
+            </div>
+            
+            <div class="carousel-nav" id="carouselNav">
+                <button class="carousel-indicator current-indicator"></button>
+                <button class="carousel-indicator"></button>
+                <button class="carousel-indicator"></button>
             </div>
         </div>
     </section>
 
     <section id="contact" class="section">
-        <div class="container contact-wrapper">
-            <div class="contact-info">
-                <h2>Parlons de votre jardin</h2>
-                <p>Que ce soit pour un entretien ponctuel ou un contrat annuel, je suis à votre écoute.</p>
-                <ul class="info-list">
-                    <li>📍 41, 45, 18</li>
-                    <li>📞 07 75 78 56 03</li>
-                    <li>📧 contact@lacabane.fr</li>
-                </ul>
+        <div class="container">
+            <div class="contact-header">
+                <h2 class="section-title">Donnons vie à <span class="accent">votre projet</span></h2>
+                <p class="section-subtitle">Je vous réponds sous 24h pour une étude personnalisée de votre jardin.</p>
             </div>
-            
-            <form id="contact-form" class="form-box">
-                <div class="form-group">
-                    <label for="name">Nom complet</label>
-                    <input type="text" id="name" required>
+
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <div class="info-block">
+                        <div class="info-icon">📍</div>
+                        <div class="info-text">
+                            <h3>Zone d'intervention</h3>
+                            <p>Loir-et-Cher (41), Loiret (45) et Cher (18).</p>
+                        </div>
+                    </div>
+                    <div class="info-block">
+                        <div class="info-icon">📞</div>
+                        <div class="info-text">
+                            <h3>Téléphone</h3>
+                            <p><a href="tel:+33775785603">07 75 78 56 03</a></p>
+                            <span>Lun - Sam : 8h - 19h</span>
+                        </div>
+                    </div>
+                    <div class="info-block">
+                        <div class="info-icon">📧</div>
+                        <div class="info-text">
+                            <h3>Email</h3>
+                            <p><a href="mailto:contact@lacabane.fr">contact@lacabane.fr</a></p>
+                        </div>
+                    </div>
+                    <div class="trust-badge">✨ Devis gratuit sans engagement</div>
                 </div>
-                <div class="form-group">
-                    <label for="type">Type de besoin</label>
-                    <select id="type">
-                        <option>Taille de haies</option>
-                        <option>Tonte & Entretien</option>
-                        <option>Élagage</option>
-                        <option>Création / Plantation</option>
-                        <option>Autre</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="message">Détails</label>
-                    <textarea id="message" rows="4" required></textarea>
-                </div>
-                <button type="submit" class="btn-submit">Envoyer ma demande</button>
-            </form>
+                
+                <form id="contact-form" class="form-box">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Nom Complet</label>
+                            <input type="text" id="name" required placeholder="Jean Dupont">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" required placeholder="votre@email.com">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="type">Besoin principal</label>
+                        <select id="type">
+                            <option>Taille de haies</option>
+                            <option>Entretien annuel</option>
+                            <option>Élagage</option>
+                            <option>Création / Plantation</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Détails de votre demande</label>
+                        <textarea id="message" rows="4" required placeholder="Décrivez votre projet..."></textarea>
+                    </div>
+                    <button type="submit" class="btn-submit">Envoyer ma demande</button>
+                </form>
+            </div>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2024 La Cabane au fond du jardin — Frédéric Sellier. Tous droits réservés.</p>
+        <p>&copy; 2024 La Cabane au fond du jardin — MARCO POLO. Tous droits réservés.</p>
     </footer>
 
     <script src="script.js"></script>
