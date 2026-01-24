@@ -1,19 +1,59 @@
-// 1. Gestion de la barre de navigation au scroll
+// 1. Navbar & Menu Mobile
 const navbar = document.getElementById('navbar');
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.getElementById('nav-links');
 
 window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
-        navbar.classList.add('scrolled');
-    } else {
-        navbar.classList.remove('scrolled');
-    }
+    if (window.scrollY > 50) navbar.classList.add('scrolled');
+    else navbar.classList.remove('scrolled');
 });
 
-// 2. Animation d'apparition des éléments (Fade in)
-const observerOptions = {
-    threshold: 0.1
+hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+    hamburger.classList.toggle('active');
+});
+
+document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+        hamburger.classList.remove('active');
+    });
+});
+
+// 2. Carrousel Avis
+const track = document.getElementById('track');
+const slides = Array.from(track.children);
+const nextBtn = document.getElementById('nextBtn');
+const prevBtn = document.getElementById('prevBtn');
+const dotsNav = document.getElementById('carouselNav');
+const dots = Array.from(dotsNav.children);
+
+const updateCarousel = (currentIndex) => {
+    track.style.transform = `translateX(-${currentIndex * 100}%)`;
+    dots.forEach(dot => dot.classList.remove('current-indicator'));
+    dots[currentIndex].classList.add('current-indicator');
 };
 
+let currentIndex = 0;
+
+nextBtn.addEventListener('click', () => {
+    currentIndex = (currentIndex + 1) % slides.length;
+    updateCarousel(currentIndex);
+});
+
+prevBtn.addEventListener('click', () => {
+    currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+    updateCarousel(currentIndex);
+});
+
+dots.forEach((dot, index) => {
+    dot.addEventListener('click', () => {
+        currentIndex = index;
+        updateCarousel(currentIndex);
+    });
+});
+
+// 3. Animations au scroll
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -21,38 +61,27 @@ const observer = new IntersectionObserver((entries) => {
             entry.target.style.transform = "translateY(0)";
         }
     });
-}, observerOptions);
+}, { threshold: 0.1 });
 
-// On cible les cartes, titres et sections
-const animatedElements = document.querySelectorAll('.card, .review-card, .section-title, .contact-info');
-
-animatedElements.forEach(el => {
+document.querySelectorAll('.card, .info-block, .form-box, .section-title').forEach(el => {
     el.style.opacity = "0";
     el.style.transform = "translateY(30px)";
     el.style.transition = "all 0.8s ease-out";
     observer.observe(el);
 });
 
-// 3. Simulation d'envoi de formulaire
-const form = document.getElementById('contact-form');
-
-form.addEventListener('submit', (e) => {
-    e.preventDefault(); // Empêche le rechargement de la page
-    
-    const btn = document.querySelector('.btn-submit');
-    const originalText = btn.innerText;
-    
+// 4. Envoi Formulaire
+document.getElementById('contact-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const btn = this.querySelector('.btn-submit');
     btn.innerText = "Envoi en cours...";
-    
     setTimeout(() => {
-        btn.style.backgroundColor = "#cfaa7d"; // Devient doré
-        btn.innerText = "Message envoyé avec succès !";
-        form.reset();
-        
-        // Remet le bouton normal après 3 secondes
+        btn.style.background = "#cfaa7d";
+        btn.innerText = "Message bien envoyé !";
+        this.reset();
         setTimeout(() => {
-            btn.style.backgroundColor = "";
-            btn.innerText = originalText;
+            btn.style.background = "";
+            btn.innerText = "Envoyer ma demande";
         }, 3000);
     }, 1500);
 });
