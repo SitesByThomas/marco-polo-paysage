@@ -79,7 +79,7 @@
                         <li class="carousel-slide current-slide">
                             <div class="review-card">
                                 <div class="stars">★★★★★</div>
-                                <p class="review-text">"Frédéric a un véritable œil d'expert. Ma haie n'a jamais été aussi bien taillée. Ponctuel et discret."</p>
+                                <p class="review-text">"Un véritable œil d'expert. Ma haie n'a jamais été aussi bien taillée. Ponctuel et discret."</p>
                                 <p class="author">— Sophie M., Propriétaire</p>
                             </div>
                         </li>
@@ -111,70 +111,107 @@
         </div>
     </section>
 
-    <section id="contact" class="section">
-        <div class="container">
-            <div class="contact-header">
-                <h2 class="section-title">Donnons vie à <span class="accent">votre projet</span></h2>
-                <p class="section-subtitle">Je vous réponds sous 24h pour une étude personnalisée de votre jardin.</p>
-            </div>
-
-            <div class="contact-wrapper">
-                <div class="contact-info">
-                    <div class="info-block">
-                        <div class="info-icon">📍</div>
-                        <div class="info-text">
-                            <h3>Zone d'intervention</h3>
-                            <p>Loir-et-Cher (41), Loiret (45) et Cher (18).</p>
-                        </div>
-                    </div>
-                    <div class="info-block">
-                        <div class="info-icon">📞</div>
-                        <div class="info-text">
-                            <h3>Téléphone</h3>
-                            <p><a href="tel:+33775785603">07 75 78 56 03</a></p>
-                            <span>Lun - Sam : 8h - 19h</span>
-                        </div>
-                    </div>
-                    <div class="info-block">
-                        <div class="info-icon">📧</div>
-                        <div class="info-text">
-                            <h3>Email</h3>
-                            <p><a href="mailto:contact@lacabane.fr">contact@lacabane.fr</a></p>
-                        </div>
-                    </div>
-                    <div class="trust-badge">✨ Devis gratuit sans engagement</div>
-                </div>
-                
-                <form id="contact-form" class="form-box">
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="name">Nom Complet</label>
-                            <input type="text" id="name" required placeholder="Jean Dupont">
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" required placeholder="votre@email.com">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="type">Besoin principal</label>
-                        <select id="type">
-                            <option>Taille de haies</option>
-                            <option>Entretien annuel</option>
-                            <option>Élagage</option>
-                            <option>Création / Plantation</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Détails de votre demande</label>
-                        <textarea id="message" rows="4" required placeholder="Décrivez votre projet..."></textarea>
-                    </div>
-                    <button type="submit" class="btn-submit">Envoyer ma demande</button>
-                </form>
-            </div>
+   <section id="contact" class="section">
+    <div class="container">
+        <div class="contact-header">
+            <h2 class="section-title">Donnons vie à <span class="accent">votre projet</span></h2>
+            <p class="section-subtitle">Je vous réponds sous 24h pour une étude personnalisée de votre jardin.</p>
         </div>
-    </section>
 
+        <div class="contact-wrapper">
+            <div class="contact-info">
+                <div class="info-block">
+                    <div class="info-icon">📍</div>
+                    <div class="info-text">
+                        <h3>Zone d'intervention</h3>
+                        <p>Loir-et-Cher (41), Loiret (45) et Cher (18).</p>
+                    </div>
+                </div>
+                <div class="info-block">
+                    <div class="info-icon">📞</div>
+                    <div class="info-text">
+                        <h3>Téléphone</h3>
+                        <p><a href="tel:+33775785603">07 75 78 56 03</a></p>
+                        <span>Lun - Sam : 8h - 19h</span>
+                    </div>
+                </div>
+                <div class="info-block">
+                    <div class="info-icon">📧</div>
+                    <div class="info-text">
+                        <h3>Email</h3>
+                        <p><a href="mailto:lacabaneaufonddujardin18@gmail.com">lacabaneaufonddujardin18@gmail.com</a></p>
+                    </div>
+                </div>
+                <div class="trust-badge">✨ Devis gratuit sans engagement</div>
+            </div>
+            
+            <form id="contact-form" class="form-box"
+                  action="https://formsubmit.co/lacabaneaufonddujardin18@gmail.com"
+                  method="POST">
+
+                <!-- Options FormSubmit -->
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_subject" value="Nouveau message depuis ton site !">
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="name">Nom Complet</label>
+                        <input type="text" name="name" id="name" required placeholder="Jean Dupont">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" name="email" id="email" required placeholder="votre@email.com">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="type">Besoin principal</label>
+                    <select name="type" id="type">
+                        <option>Taille de haies</option>
+                        <option>Entretien annuel</option>
+                        <option>Élagage</option>
+                        <option>Création / Plantation</option>
+                        <option>Autres</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Détails de votre demande</label>
+                    <textarea name="message" id="message" rows="4" required placeholder="Décrivez votre projet..."></textarea>
+                </div>
+
+                <button type="submit" class="btn-submit">Envoyer ma demande</button>
+
+                <!-- Message succès -->
+                <p id="success-message" style="display:none; color:green; margin-top:15px;">
+                    ✅ Message envoyé avec succès ! Je vous réponds rapidement.
+                </p>
+            </form>
+        </div>
+    </div>
+</section>
+
+<script>
+document.getElementById("contact-form").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const form = this;
+    const data = new FormData(form);
+
+    fetch(form.action, {
+        method: "POST",
+        body: data,
+        headers: {
+            'Accept': 'application/json'
+        }
+    }).then(response => {
+        document.getElementById("success-message").style.display = "block";
+        form.reset();
+    }).catch(error => {
+        alert("Une erreur est survenue, veuillez réessayer.");
+    });
+});
+</script>
     <footer>
         <p>&copy; 2024 La Cabane au fond du jardin — MARCO POLO. Tous droits réservés.</p>
     </footer>
